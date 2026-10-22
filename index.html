@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>VELORA COFFEE — Crafted Slowly. Felt Deeply.</title>
+    <link rel="icon" href="assets/coffee.svg" type="image/svg+xml">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="beans" aria-hidden="true"></canvas>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <header id="nav">
+        <a class="logo" href="#home">
+        <svg
+          width="26"
+          height="26"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6">
+          <path
+            d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5zM17 10h2a2 2 0 0 1 0 4h-2M8 3c-1 1 1 2 0 3M12 3c-1 1 1 2 0 3"/></svg
+        >VELORA COFFEE
+    </a>
+      <nav id="links" aria-label="Main">
+        <a href="#home">Home</a><a href="#story">Our Story</a
+        ><a href="#menu">Menu</a><a href="#experience">Experience</a
+        ><a href="#visit">Visit Us</a>
+      </nav>
+      <div class="act">
+        <button class="ic" id="search" aria-label="Search menu">🔍</button
+        ><button class="ic" id="cartBtn" aria-label="Open cart">
+          Cart <b id="count">0</b></button
+        ><a class="btn sm" href="#menu">Order Coffee</a
+        ><button
+          class="ic burger"
+          id="burger"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+      </div>
+    </header>
+    <main>
+      <section id="home" class="hero dark">
+        <div class="glow"></div>
+        <div class="hero-t">
+          <p class="lab">Specialty Coffee • Extraordinary Moments</p>
+          <h1>
+            <span>Life Moves Fast.</span><span>Coffee Takes You</span
+            ><span><em>Somewhere Else.</em></span>
+          </h1>
+          <p class="lead">
+            Discover carefully sourced beans, thoughtful craftsmanship, and
+            coffee worth slowing down for.
+          </p>
+          <a class="btn" href="#menu">Explore Our Coffee</a>
+          <a class="btn ghost" href="#story">Discover Our Story</a>
+        </div>
+        <div class="cup-wrap">
+          <div class="cup" id="cup">
+            <div class="steam"><i></i><i></i><i></i></div>
+            <div class="cup-img">
+              <img
+                src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=75"
+                alt="A cup of coffee with crema on a saucer"
+                onerror="this.remove()"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="scroll">Scroll</div>
+      </section>
+
+      <section id="story" class="story">
+        <div class="intro">
+          <p class="lab">Bean to Cup</p>
+          <h2>Great Coffee Is Never an Accident.</h2>
+          <p>
+            Every remarkable cup begins long before the first sip. It begins
+            with the people, the place, and the care behind every bean.
+          </p>
+        </div>
+        <div class="pin">
+          <div class="sv"><div class="frame"></div></div>
+          <div class="st"></div>
+          <div class="prog"><i></i></div>
+        </div>
+      </section>
+
+      <section id="menu" class="menu dark">
+        <div class="head">
+          <p class="lab">The Menu</p>
+          <h2>Your Next Favorite Is Here.</h2>
+          <p>
+            From bold espresso to silky, milk-crafted classics, discover a cup
+            that feels like yours.
+          </p>
+          <div class="filters" role="group" aria-label="Filter menu"></div>
+          <input
+            id="q"
+            type="search"
+            placeholder="Search drinks…"
+            aria-label="Search drinks"
+          />
+        </div>
+        <div class="grid" id="grid"></div>
+        <p id="none" hidden>No drinks match your search.</p>
+        <p class="demo">Prices are illustrative demo data.</p>
+      </section>
+
+      <section id="experience" class="brand">
+        <div class="bimg">
+          <img
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=1100&q=70"
+            alt="Warm cafe interior"
+            onerror="this.remove()"
+          />
+        </div>
+        <div class="btxt">
+          <p class="lab">More Than Coffee</p>
+          <h2>A Little Ritual. A Better Day.</h2>
+          <ul>
+            <li>
+              <svg viewBox="0 0 40 40">
+                <path d="M5 30c10-2 15-10 30-22-2 14-10 24-30 22z" /></svg
+              ><b>Thoughtfully Sourced</b><span>Carefully selected beans.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 40 40">
+                <circle cx="20" cy="20" r="14" />
+                <path d="M12 22c6-8 10 4 16-4" /></svg
+              ><b>Expertly Crafted</b
+              ><span>Attention to every brewing detail.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 40 40">
+                <circle cx="20" cy="20" r="14" />
+                <path d="M20 10v10l7 4" /></svg
+              ><b>Made for Moments</b
+              ><span>Coffee for work, conversations, and quiet mornings.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 40 40">
+                <path d="M20 34C4 22 8 8 20 15c12-7 16 7 0 19z" /></svg
+              ><b>Community First</b
+              ><span>A welcoming place for people to connect.</span>
+            </li>
+          </ul>
+          <a class="btn" href="#visit">Visit Velora</a>
+        </div>
+      </section>
+
+      <section class="feat dark">
+        <div class="ft">
+          <p class="lab">Featured</p>
+          <h2>The Iced Caramel Latte</h2>
+          <p>
+            Move your pointer over the glass. Tap a label to explore what is
+            inside.
+          </p>
+          <div id="ing-d" aria-live="polite">Select an ingredient.</div>
+        </div>
+        <div class="glass" id="glass">
+          <div class="gl l1"></div>
+          <div class="gl l2"></div>
+          <div class="gl l3"></div>
+          <div class="gl l4">
+            <img
+              loading="lazy"
+              src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=700&q=70"
+              alt="Iced coffee"
+              onerror="this.remove()"
+            />
+          </div>
+          <button
+            class="tag"
+            data-i="Espresso — Two shots of our Velora blend, pulled slow."
+            style="top: 12%; left: -6%"
+          >
+            Espresso</button
+          ><button
+            class="tag"
+            data-i="Milk — Cold, silky whole milk (oat on request)."
+            style="top: 45%; right: -8%"
+          >
+            Milk</button
+          ><button
+            class="tag"
+            data-i="Caramel — House-made, slightly salted, drizzled by hand."
+            style="bottom: 14%; left: -4%"
+          >
+            Caramel
+          </button>
+        </div>
+      </section>
+
+      <section class="testi">
+        <p class="lab">Demo testimonials</p>
+        <h2>Good Coffee. Better Memories.</h2>
+        <div
+          class="car"
+          id="car"
+          tabindex="0"
+          aria-roledescription="carousel"
+          aria-label="Testimonials"
+        >
+          <div class="track"></div>
+        </div>
+        <div class="ctl">
+          <button class="ic" id="prev" aria-label="Previous testimonial">
+            ←</button
+          ><span id="dots"></span
+          ><button class="ic" id="next" aria-label="Next testimonial">→</button>
+        </div>
+      </section>
+
+      <section id="visit" class="visit">
+        <div>
+          <p class="lab">Visit Us · Demo content</p>
+          <h2>Come Stay a While.</h2>
+          <dl id="site"></dl>
+          <a class="btn" id="dir" target="_blank" rel="noopener" href="#"
+            >Get Directions</a
+          >
+          <a class="btn ghost dk" href="mailto:hello@velora.example"
+            >Contact Us</a
+          >
+        </div>
+        <div class="vimg">
+          <img
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1000&q=70"
+            alt="Coffee and beans on a cafe table"
+            onerror="this.remove()"
+          />
+        </div>
+      </section>
+
+      <section class="cta dark">
+        <div class="cup2" id="cup2">
+          <img
+            loading="lazy"
+            src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=70"
+            alt="Coffee cup"
+            onerror="this.remove()"
+          />
+        </div>
+        <h2>Make Room for a Better Cup.</h2>
+        <p>Your next favorite coffee is waiting.</p>
+        <a class="btn" href="#menu">Explore the Menu</a>
+        <a class="btn ghost" href="#visit">Visit Our Cafe</a>
+      </section>
+    </main>
+    <footer>
+      <div>
+        <b class="logo">VELORA COFFEE</b>
+        <p>Crafted Slowly. Felt Deeply.</p>
+      </div>
+      <nav aria-label="Footer">
+        <p><a href="#story">Our Story</a></p>
+        <p><a href="#menu">Menu</a></p>
+        <p><a href="#visit">Visit</a></p>
+        <p><a href="#" data-soc>Instagram</a></p>
+        <p><a href="https://x.com/Krish06052008" target="_blank">X</a></p>
+      </nav>
+      <form id="news" novalidate>
+        <label for="em">Newsletter</label>
+        <div>
+          <input
+            id="em"
+            type="email"
+            placeholder="you@example.com"
+            autocomplete="email"
+          /><button class="btn sm">Join</button>
+        </div>
+        <small id="nm" role="status"></small>
+      </form>
+      <p class="cp">© <span id="yr"></span> Velora Coffee · Demo site</p>
+    </footer>
+    <aside id="drawer" aria-label="Cart" aria-hidden="true">
+      <div class="dh">
+        <h3>Your Cart</h3>
+        <button class="ic" id="close" aria-label="Close cart">✕</button>
+      </div>
+      <div id="items"></div>
+      <div class="df">
+        <p>Total <b id="total"></b></p>
+        <button class="btn" id="checkout">Demo Checkout</button
+        ><small>Demo only — no payment is processed.</small>
+      </div>
+    </aside>
+    <div id="mask" hidden></div>
+    <div
+      id="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mt"
+      hidden
+    ></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
